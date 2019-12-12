@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div d="slogan" class="text-center">
-            <h1>NameGator</h1>
+        <div id="slogan" class="text-center">
+            <h1>TopsTonNameGator</h1>
             <br/>
             <h6 class="text-secondary">Gerador de nomes, utilizando Vue,js, GraphQL e Node</h6>
         </div>
-        <div id="main">
+        <div id="smain">
             <div class="container">
                 <div class="row">
                     <div class="col-md">
@@ -37,14 +37,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <br/>
-            <h5>Dominios <span class="badge badge-info">{{domains.length}}</span></h5>
-            <div class="card">
-                <div class="card-body">
-                    <li class="list-group-item" v-for="domain in domains" v-bind:key="domain.name">
-                        {{ domain }}
-                    </li>
+                <br/>
+                <h5>Dominios <span class="badge badge-info">{{domains.length}}</span></h5>
+                <div class="card">
+                    <div class="card-body">
+                        <li class="list-group-item" v-for="domain in domains" v-bind:key="domain.name">
+                            {{ domain }}
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,9 +59,9 @@
         name: 'app',
         data: function () {
             return {
-                prefixes: ['Air', 'Jet', 'Flight'],
-                sufixes: ['Hub', 'Station', 'Mart'],
-                domains: ['AirHub', 'AirStation', 'AirMart']
+                prefixes: ['Coisa', 'Lira'],
+                sufixes: ['nte', 'ntson'],
+                domains: ['Lirante', 'Coisantson', 'Lirantson']
             };
         }
     }
@@ -73,7 +73,7 @@
         margin-bottom: 30px;
     }
 
-    #main {
+    #smain {
         background-color: #F1F1F1;
         padding-top: 30px;
         peeding-bottam: 20px;
