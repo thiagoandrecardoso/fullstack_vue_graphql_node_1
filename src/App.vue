@@ -18,7 +18,12 @@
                                     </li>
                                 </ul>
                                 <br/>
-                                <input class="form-control" type="text" placeholder="Digite o prefixo"/>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" v-model="prefix" placeholder="Digite o prefixo"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-info" v-on:click="addPrefix(prefix)"><span class="fa fa-plus"></span></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +37,12 @@
                                     </li>
                                 </ul>
                                 <br/>
-                                <input class="form-control" type="text" placeholder="Digite o sufixo"/>
+                                <div class="input-group">
+                                    <input class="form-control" type="text" v-model="sufix" placeholder="Digite o sufixo"/>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-info" v-on:click="addSufix(sufix)"> <span class="fa fa-plus"></span></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,10 +69,22 @@
         name: 'app',
         data: function () {
             return {
+                prefix: "",
+                sufix: "",
                 prefixes: ['Coisa', 'Lira'],
                 sufixes: ['nte', 'ntson'],
                 domains: ['Lirante', 'Coisantson', 'Lirantson']
             };
+        },
+        methods: {
+            addPrefix(prefix){
+                this.prefixes.push(prefix);
+                this.prefix = "";
+            },
+            addSufix(sufix){
+                this.sufixes.push(sufix);
+                this.sufix = ""
+            }
         }
     }
 </script>
