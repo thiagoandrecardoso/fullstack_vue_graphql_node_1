@@ -19,7 +19,7 @@
                                                 {{prefix}}
                                             </div>
                                             <div class="col-md text-right">
-                                                <button class="btn btn-info" v-on:click="deletePrefix(sufix)"><span
+                                                <button class="btn btn-info" v-on:click="deletePrefix(prefix)"><span
                                                         class="fa fa-trash"></span></button>
                                             </div>
                                         </div>
