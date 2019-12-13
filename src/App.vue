@@ -72,7 +72,16 @@
                 <div class="card">
                     <div class="card-body">
                         <li class="list-group-item" v-for="domain in domains" v-bind:key="domain.name">
-                            {{ domain }}
+                            <div class="row">
+                                <div class="col-md">
+                                    {{ domain.name }}
+                                </div>
+                                <div class="col-md text-right">
+                                    <a class="btn btn-info" v-bind:href="domain.checkout" target="_blank">
+                                        <span class="fa fa-shopping-cart"></span>
+                                    </a>
+                                </div>
+                            </div>
                         </li>
                     </div>
                 </div>
@@ -91,8 +100,8 @@
             return {
                 prefix: "",
                 sufix: "",
-                prefixes: ['Coisa', 'Lira'],
-                sufixes: ['nte', 'ntson'],
+                prefixes: ["Air", "Jet", "Flight"],
+                sufixes: ["Hub", "Station", "Mart"]
             };
         },
         methods: {
@@ -117,7 +126,12 @@
                 for (const prefix of this.prefixes) {
                     for (const sufix of this.sufixes) {
                         const name = prefix + sufix;
-                        domains.push(name);
+                        const url = name.toLowerCase();
+                        const checkout = `https://checkout.hostgator.com.br/?a=add&sld=${url}&tld=.com.br`;
+                        domains.push({
+                            name,
+                            checkout
+                        });
                     }
                 }
                 return domains;
